@@ -660,3 +660,12 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-18 09:01:44 +0530
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/the-secret-programmer/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/home_controller.rb:4
+Completed 200 OK in 66ms (Views: 19.8ms | ActiveRecord: 1.2ms)
+
+
