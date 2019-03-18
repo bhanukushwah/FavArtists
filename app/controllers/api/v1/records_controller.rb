@@ -7,6 +7,7 @@ module Api
       # GET /records
       def index
         @records = current_user.records.all
+
         render json: @records
       end
 
@@ -20,7 +21,7 @@ module Api
         @record = current_user.records.build(record_params)
 
         if @record.save
-          render json: @record, status: :created, location: @record
+          render json: @record, status: :created
         else
           render json: @record.errors, status: :unprocessable_entity
         end
@@ -48,7 +49,7 @@ module Api
 
         # Only allow a trusted parameter "white list" through.
         def record_params
-          params.require(:record).permit(:title, :year, :artist_id, :user_id)
+          params.require(:record).permit(:title, :year, :artist_id)
         end
     end
   end
